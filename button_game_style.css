@@ -1,0 +1,104 @@
+body {
+    background-color: #333;
+    margin: 0;
+}
+#button {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    background: linear-gradient(to right, #b86bff, #ac4688);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    color: #ffffffa1;
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), top 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+#button::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: 2;
+}
+#counter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: 600px;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.751), rgba(255, 255, 255, 0.089));
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    user-select: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: -20px;
+}
+#counter.explode {
+    animation: none;
+}
+@keyframes explode-counter {
+    /* No effect */
+}
+#result-box {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 5px;
+    font-size: 40px;
+    font-stretch: extra-condensed;
+    font-family:'Courier New', Courier, monospace;
+    color: #ffffff;
+    z-index: 2;
+    display: none;
+    transition: bottom 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+#retry-button {
+    background: linear-gradient(to right, #b86bff, #ac4688);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 100;
+    display: none;
+}
